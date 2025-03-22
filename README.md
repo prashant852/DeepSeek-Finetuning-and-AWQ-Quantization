@@ -9,4 +9,16 @@ Description:
 `01_finetuning.py` Code for finetuning LLM with LoRA using Unsloth  
 `02_adapters_merging.ipynb` Merging LoRA adapters with the base model  
 `03_awq_quantization.ipynb` AWQ quantization of the finetuned model using AutoAWQ  
-`./logs` Training output logs
+`logs` Training output logs
+
+Usage:  
+Run `nohup python3 01_finetuning.py > ./logs/outputs.log 2> ./logs/outputs.err &` to start finetuning
+
+Requirements:
+```bash
+# Installs Unsloth, Xformers (Flash Attention) and all other packages!
+pip install unsloth
+# Get latest Unsloth
+pip uninstall unsloth -y && pip install --upgrade --no-cache-dir "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+pip install datasets
+```
